@@ -84,14 +84,14 @@ Suggest ticket priority
 Support-Ticket-System/
 │
 ├── backend/
-│ ├── tickets/
-│ ├── requirements.txt
-│ └── Dockerfile
+│   ├── tickets/
+│   ├── requirements.txt
+│   └── Dockerfile
 │
 ├── frontend/
-│ ├── src/
-│ ├── package.json
-│ └── Dockerfile
+│   ├── src/
+│   ├── package.json
+│   └── Dockerfile
 │
 ├── docker-compose.yml
 ├── README.md
@@ -113,20 +113,20 @@ Backend API:
 👉 http://localhost:8000/api/tickets/
 
 🔌 API Endpoints
-Method Endpoint Description
-GET /api/tickets/ List all tickets
-POST /api/tickets/ Create ticket
-PATCH /api/tickets/{id}/ Update ticket
-DELETE /api/tickets/{id}/ Delete ticket
-GET /api/tickets/stats/ Ticket statistics
-POST /api/tickets/classify/ LLM classification
+Method	Endpoint	Description
+GET	/api/tickets/	List all tickets
+POST	/api/tickets/	Create ticket
+PATCH	/api/tickets/{id}/	Update ticket
+DELETE	/api/tickets/{id}/	Delete ticket
+GET	/api/tickets/stats/	Ticket statistics
+POST	/api/tickets/classify/	LLM classification
 📊 Example Ticket JSON
 {
-"title": "Payment Failed",
-"description": "My payment is not processing",
-"category": "billing",
-"priority": "high",
-"status": "open"
+  "title": "Payment Failed",
+  "description": "My payment is not processing",
+  "category": "billing",
+  "priority": "high",
+  "status": "open"
 }
 
 🧠 LLM Classification Example
@@ -135,17 +135,19 @@ POST request to:
 
 /api/tickets/classify/
 
+
 Body:
 
 {
-"description": "My account is locked and I cannot login"
+  "description": "My account is locked and I cannot login"
 }
+
 
 Response:
 
 {
-"suggested_category": "account",
-"suggested_priority": "high"
+  "suggested_category": "account",
+  "suggested_priority": "high"
 }
 
 🛠️ Environment Variables
@@ -153,6 +155,7 @@ Response:
 Backend requires:
 
 LLM_API_KEY=your_openai_api_key
+
 
 Set inside:
 
